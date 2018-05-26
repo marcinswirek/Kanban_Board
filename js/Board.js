@@ -8,7 +8,18 @@ var board = {
 };
 
 $(".create-column").click(function() {
-  board.createColumn(new Column(prompt("Wpisz nazwę kolumny")));
+  var columnName = prompt("Wpisz nazwę kolumny");
+  $.ajax({
+    url: baseUrl + "/column",
+    method: "POST",
+    data: {
+      name: columnName
+    },
+    success: function(response) {
+      var column = new Column(response.id, columnName);
+      board.createColumn(column);
+    }
+  });
 });
 
 function initSortable() {
