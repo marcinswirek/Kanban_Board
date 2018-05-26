@@ -1,73 +1,71 @@
+@import url("https://fonts.googleapis.com/css?family=Quicksand");
+
 body {
-  margin: 0;
+  background-color: green;
+  font-family: "Quicksand", serif;
+  background-image: url("https://images.pexels.com/photos/533189/pexels-photo-533189.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
 }
-* {
-  box-sizing: border-box;
+h1 {
+  color: #bfed37;
+  font-size: 60px;
+  text-align: center;
 }
 
-.ui-sortable {
-  min-height: 80px;
-}
-.btn-delete {
-  position: absolute;
-  right: 0;
-  top: 0;
-  width: 22px;
-  height: 22px;
-  border: 0;
-  background-color: rgba(0, 0, 0, 0.4);
-  color: white;
-}
-/* BOARD */
-.board h1 {
-  margin-left: 8px;
-}
 .column-container {
   display: flex;
   flex-direction: row;
-  flex-wrap: nowrap;
+  justify-content: center;
 }
 
-/* COLUMN */
 .column {
-  order: 1;
-  min-width: 300px;
-  min-height: 50vh;
-  background-color: lightgrey;
-  margin-left: 8px;
-  list-style: none;
-  position: relative;
-}
-.column-add-card {
-  cursor: pointer;
-  text-decoration: underline;
-  margin: 5px 8px;
-  display: block;
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+  background-color: rgba(191, 237, 55, 0.5);
+  border-radius: 5px;
+  margin-top: 30px;
+  margin-right: 20px;
+  margin-left: 20px;
+  padding: 20px;
+  padding-top: 5px;
 }
 
-/* STYLE KARTY */
-.card {
-  box-sizing: border-box;
-  display: block;
-  height: 60px;
-  margin-bottom: 5px;
-  padding: 4px;
-  overflow: hidden;
-  position: relative;
+.column-list {
+  padding: 10px;
+  margin-top: 10px;
+  list-style-type: none;
 }
-.card-list {
-  list-style: none;
-  margin: 5px;
-  padding: 0px;
+
+.column-list .card {
+  border: solid 2px black;
+  margin-top: 10px;
+  cursor: pointer;
+  background-color: #fffb0a;
+  border-radius: 10px;
+  padding: 10px;
 }
-.card-description {
-  margin: 2px 0;
+
+.column .column-title {
+  text-align: center;
 }
-.card-placeholder {
-  box-sizing: border-box;
-  display: block;
-  height: 60px;
-  margin-bottom: 5px;
-  border: 2px solid lightgrey;
-  background-color: lightblue;
+
+.add-card {
+  border-radius: 10px;
+  font-size: 10px;
+  background-color: black;
+  color: white;
+}
+
+.btn-delete {
+  font-size: 10px;
+  border-radius: 7px;
+}
+
+.create-column {
+  cursor: pointer;
+  font-size: 15px;
+  border-radius: 5px;
+  background-color: rgba(191, 237, 55, 0.5);
+  color: white;
+  width: 100%;
 }
