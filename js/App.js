@@ -31,20 +31,20 @@ function setupCards(col, cards) {
   });
 }
 
-// // TWORZENIE NOWYCH EGZEMPLARZY KOLUMN
+// Creating Colums
 // var todoColumn = new Column("Do zrobienia");
 // var doingColumn = new Column("W trakcie");
 // var doneColumn = new Column("Skończone");
 
-// // DODAWANIE KOLUMN DO TABLICY
+// Adding columns to the board
 // board.createColumn(todoColumn);
 // board.createColumn(doingColumn);
 // board.createColumn(doneColumn);
 
-// // TWORZENIE NOWYCH EGZEMPLARZY KART
+// Creating cards
 // var card1 = new Card("Nowe zadanie");
-// var card2 = new Card("stworzyc tablice kanban");
+// var card2 = new Card("stworzyć tablice kanban");
 
-// // DODAWANIE KART DO KOLUMN
+// Adding cards to columns
 // todoColumn.createCard(card1);
 // doingColumn.createCard(card2);
