@@ -12,8 +12,8 @@ function Column(id, name) {
       .text(self.name);
     var $columnCardList = $("<ul>").addClass("card-list");
     var $columnDeleteBtn = $("<button>")
-      .addClass("btn-delete")
-      .text("x");
+      .addClass("btn-delete-column")
+      .text("X");
     var $columnAddCard = $("<button>")
       .addClass("column-add-card")
       .text("Dodaj kartę");
@@ -47,6 +47,7 @@ function Column(id, name) {
     return $column;
   }
 }
+
 Column.prototype = {
   createCard: function(card) {
     this.$element.children("ul").append(card.$element);

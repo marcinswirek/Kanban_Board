@@ -15,7 +15,7 @@ function Card(id, name) {
       .text(self.name);
 
     $cardDeleteBtn.click(function() {
-      self.removeCard(); //Removecard?
+      self.removeCard();
     });
 
     $card.append($cardDeleteBtn);
@@ -24,6 +24,7 @@ function Card(id, name) {
     return $card;
   }
 }
+
 Card.prototype = {
   removeCard: function() {
     var self = this;
