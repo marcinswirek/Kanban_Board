@@ -8,7 +8,7 @@ $.ajaxSetup({
   headers: myHeaders
 });
 
-$ajax({
+$.ajax({
   url: baseUrl + "/board",
   method: "GET",
   success: function(response) {

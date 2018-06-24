@@ -3,21 +3,25 @@ function Card(id, name) {
 
   this.id = id;
   this.name = name || "Nie podano nazwy!";
-  this.element = createCard();
+  this.$element = createCard();
 
   function createCard() {
-    var card = $('<li class="card"></li>');
-    var cardDeleteBtn = $('<button class="btn-delete">x</button>');
-    var cardDescription = $('<p class="card-description"></p>');
+    var $card = $("<li>").addClass("card");
+    var $cardDeleteBtn = $("<button>")
+      .addClass("btn-delete btn")
+      .text("x");
+    var $cardDescription = $("<p>")
+      .addClass("card-description")
+      .text(self.name);
 
-    cardDeleteBtn.click(function() {
-      self.removeCard();
+    $cardDeleteBtn.click(function() {
+      self.removeCard(); //Removecard?
     });
 
-    card.append(cardDeleteBtn);
-    cardDescription.text(self.name);
-    card.append(cardDescription);
-    return card;
+    $card.append($cardDeleteBtn);
+    $cardDescription.text(self.name);
+    $card.append($cardDescription);
+    return $card;
   }
 }
 Card.prototype = {

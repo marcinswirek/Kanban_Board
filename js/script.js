@@ -23,7 +23,7 @@ $(function() {
   var board = {
     name: "Tablica Kanban",
     createColumn: function(column) {
-      this.element.append(column.element);
+      this.$element.append(column.$element);
       initSortable();
     },
     element: $("#board .column-container")
@@ -39,41 +39,45 @@ $(function() {
 
     this.id = randomString();
     this.name = name;
-    this.element = createColumn();
+    this.$element = createColumn();
 
     function createColumn() {
       // TWORZENIE NOWYCH WĘZŁÓW
-      var column = $('<div class="column"></div>');
-      var columnTitle = $('<h2 class="column-title">' + self.name + "</h2>");
-      var columnCardList = $('<ul class="card-list"></ul>');
-      var columnDelete = $('<button class="btn-delete">x</button>');
-      var columnAddCard = $(
-        '<button class="column-add-card">Dodaj kartę</button>'
-      );
+      var $column = $("<div>").addClass("column");
+      var $columnTitle = $("<h2>")
+        .addClass("column-title")
+        .text(self.name);
+      var $columnCardList = $("<ul>").addClass("card-list");
+      var $columnDelete = $("<button>")
+        .addClass("btn-delete")
+        .text("x");
+      var $columnAddCard = $("<button>")
+        .addClass("column-add-card")
+        .text("Dodaj kartę");
 
       // PODPINANIE ODPOWIEDNICH ZDARZEŃ POD WĘZŁY
-      columnDelete.click(function() {
-        self.deleteColumn();
+      $columnDelete.click(function() {
+        self.removeColumn();
       });
-      columnAddCard.click(function(event) {
+      $columnAddCard.click(function(event) {
         event.preventDefault();
         self.createCard(new Card(prompt("Wpisz nazwę karty")));
       });
 
       // KONSTRUOWANIE ELEMENTU KOLUMNY
-      column
-        .append(columnTitle)
-        .append(columnDelete)
-        .append(columnAddCard)
-        .append(columnCardList);
-      return column;
+      $column
+        .append($columnTitle)
+        .append($columnDelete)
+        .append($columnAddCard)
+        .append($columnCardList);
+      return $column;
     }
   }
   Column.prototype = {
     createCard: function(card) {
       this.element.children("ul").append(card.element);
     },
-    deleteColumn: function() {
+    removeColumn: function() {
       this.element.remove();
     }
   };
@@ -84,7 +88,7 @@ $(function() {
 
     this.id = randomString();
     this.description = description;
-    this.element = createCard();
+    this.$element = createCard();
 
     function createCard() {
       var card = $('<li class="card"></li>');
