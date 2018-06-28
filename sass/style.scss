@@ -1,18 +1,30 @@
 @import url("https://fonts.googleapis.com/css?family=Quicksand");
 
+//Variables
+$black: black;
+$white: white;
+$green: green;
+$yellow: #bfed37;
+$table-color: rgba(191, 237, 55, 0.5);
+$font-size-s: 10px;
+$font-size-m: 15px;
+$font-size-xxl: 60px;
+
+//Content
 * {
-    box-sizing: border-box;
-    //border: 1px solid red;
+  box-sizing: border-box;
+  border: 1px solid red;
 }
 
 body {
-  background-color: green;
+  background-color: $green;
   font-family: "Quicksand", serif;
   background-image: url("https://images.pexels.com/photos/533189/pexels-photo-533189.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
 }
+
 h1 {
-  color: #bfed37;
-  font-size: 60px;
+  color: $yellow;
+  font-size: $font-size-xxl;
   text-align: center;
 }
 
@@ -23,14 +35,14 @@ h1 {
 }
 
 .btn-container {
-    display: flex;
+  display: flex;
 }
 
 .column {
   display: flex;
   flex-direction: column;
   width: 250px;
-  background-color: rgba(191, 237, 55, 0.5);
+  background-color: $table-color;
   border-radius: 5px;
   margin-top: 30px;
   margin-right: 20px;
@@ -45,69 +57,73 @@ h1 {
 }
 
 .column-add-card {
-    height: 60px;
-    text-align: center;
-    border-radius: 5px;
-    margin-top: 5px;
-    transition: all .3s linear;
-    &:hover {
-        cursor: pointer;
-        box-shadow: 0 0 10px black;
-    }
+  height: 60px;
+  text-align: center;
+  border-radius: 5px;
+  margin-top: 5px;
+  font-family: "Quicksand", "Arial", sans-serif;
+  transition: all 0.3s linear;
+  &:hover {
+    cursor: pointer;
+    box-shadow: 0 0 10px $black;
+  }
 }
 
 .card-list {
-    height: 100%;
-    padding-left: 0;
-    
+  height: 100%;
+  padding-left: 0;
 }
 
 .card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .card-description {
-    margin-top: 0px;
+  margin-top: 0px;
 }
 
 .btn-delete {
-  font-size: 10px;
+  font-size: $font-size-s;
   border-radius: 7px;
-  height: 20px;
+  //height: 20px;
   width: 40px;
   margin: 5px auto;
+  font-family: "Quicksand", "Arial", sans-serif;
   font-weight: 900;
   text-align: center;
-  transition: all .3s linear;
+  transition: all 0.3s linear;
   &:hover {
-      cursor: pointer;
-      box-shadow: 0 0 10px black;
+    cursor: pointer;
+    box-shadow: 0 0 10px $black;
   }
 }
 
 .btn-delete-column {
-    height: 10vh;
-    border-radius: 5px;
-    transition: all .3s linear;
-    &:hover {
-        cursor: pointer;
-        box-shadow: 0 0 10px black;
-    }
+  height: 40px;
+  width: 40px;
+  border-radius: 5px;
+  transition: all 0.3s linear;
+  font-family: "Quicksand", "Arial", sans-serif;
+  &:hover {
+    cursor: pointer;
+    box-shadow: 0 0 10px $black;
+  }
 }
 
 .create-column {
   cursor: pointer;
-  font-size: 15px;
+  font-size: $font-size-m;
+  font-family: "Quicksand", "Arial", sans-serif;
   border-radius: 5px;
-  background-color: rgba(191, 237, 55, 0.5);
-  color: white;
+  background-color: $table-color;
+  color: $white;
   width: 50%;
   margin: 0 auto;
-  transition: all .3s linear;
+  transition: all 0.3s linear;
   &:hover {
-      cursor: pointer;
-      box-shadow: 0 0 10px black;
+    cursor: pointer;
+    box-shadow: 0 0 10px $black;
   }
 }

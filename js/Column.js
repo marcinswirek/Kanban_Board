@@ -40,8 +40,8 @@ function Column(id, name) {
     });
 
     $column
-      .append($columnTitle)
       .append($columnDeleteBtn)
+      .append($columnTitle)
       .append($columnAddCard)
       .append($columnCardList);
     return $column;
@@ -57,7 +57,7 @@ Column.prototype = {
     $.ajax({
       url: baseUrl + "/column/" + self.id,
       method: "DELETE",
-      success: function(response) {
+      success: function() {
         self.$element.remove();
       }
     });
