@@ -2,7 +2,7 @@ function Card(id, name) {
   var self = this;
 
   this.id = id;
-  this.name = name || "Nie podano nazwy!";
+  this.name = name || "No name given!";
   this.$element = createCard();
 
   function createCard() {
@@ -19,8 +19,8 @@ function Card(id, name) {
     });
 
     $card.append($cardDeleteBtn);
-    $cardDescription.text(self.name);
     $card.append($cardDescription);
+    $cardDescription.text(self.name);
     return $card;
   }
 }

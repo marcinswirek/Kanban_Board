@@ -2,7 +2,7 @@ function Column(id, name) {
   var self = this;
 
   this.id = id;
-  this.name = name || "Nie podano nazwy!";
+  this.name = name || "No name given!";
   this.$element = createColumn();
 
   function createColumn() {
@@ -16,14 +16,14 @@ function Column(id, name) {
       .text("X");
     var $columnAddCard = $("<button>")
       .addClass("column-add-card")
-      .text("Dodaj kartę");
+      .text("Add new ticket...");
 
     $columnDeleteBtn.click(function() {
       self.removeColumn();
     });
 
     $columnAddCard.click(function(event) {
-      var cardName = prompt("Wpisz nazwę karty");
+      var cardName = prompt("Enter card name");
       event.preventDefault();
       $.ajax({
         url: baseUrl + "/card",
@@ -42,8 +42,8 @@ function Column(id, name) {
     $column
       .append($columnDeleteBtn)
       .append($columnTitle)
-      .append($columnAddCard)
-      .append($columnCardList);
+      .append($columnCardList)
+      .append($columnAddCard);
     return $column;
   }
 }
