@@ -1,6 +1,4 @@
-# zadanie-12-7
-
-https://swirek-marcin.github.io/zadanie-12-7/
+12-7
 
 ```
 npm install - to install npm packages
